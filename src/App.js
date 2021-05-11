@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import Formulario from './components/Formulario';
 import Cita from './components/Cita';
 
@@ -7,6 +7,9 @@ function App() {
 
   const [citas, guardarCitas] = useState([]);
 
+  useEffect(() => {
+    console.log('Documento listo o algo paso con las citas');
+  }, [citas]);
 
   const crearCita = cita => {
     guardarCitas([
