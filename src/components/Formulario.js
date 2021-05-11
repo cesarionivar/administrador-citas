@@ -31,7 +31,7 @@ const Formulario = ({crearCita}) => {
     e.preventDefault();
 
     // Validar
-    if(mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora .trim() === '' || sintomas.trim() === '') {
+    if(mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || sintomas.trim() === '') {
       actualizarError(true);
       return;
     }
