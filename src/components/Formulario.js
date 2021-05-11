@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { v4 as uuid } from 'uuid';
 
 const Formulario = () => {
 
@@ -31,16 +32,18 @@ const Formulario = () => {
 
     // Validar
     if(mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' || hora .trim() === '' || sintomas.trim() === '') {
-
       actualizarError(true);
-
       return;
     }
 
+    // Eliminar el mensaje previo
+    actualizarError(false);
+
     console.log('Agregando...');
-
+    
     // Asignar un ID
-
+    cita.id = uuid();
+    console.log(cita);
     // Crear la citas
 
     // Reiniciar el form
