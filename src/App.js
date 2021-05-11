@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Formulario from "./components/Formulario";
 import Cita from "./components/Cita";
+import PropTypes from 'prop-types';
 
 function App() {
   // Citas en local storage
@@ -11,6 +12,9 @@ function App() {
   const [citas, guardarCitas] = useState(citasIniciales);
 
   useEffect(() => {
+
+    let citasIniciales = localStorage.getItem("citas");
+
 
     if(citasIniciales) {
       localStorage.setItem('citas', JSON.stringify(citas));
@@ -51,6 +55,10 @@ function App() {
       </div>
     </>
   );
+}
+
+Formulario.propTypes = {
+  crearCita: PropTypes.func.isRequired
 }
 
 export default App;
